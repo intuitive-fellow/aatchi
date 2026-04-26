@@ -81,6 +81,7 @@ export default function KeralaMap({ year, government, allianceColour, allianceNa
       <svg
         ref={svgRef}
         viewBox={`0 0 ${W} ${H}`}
+        width="100%"
         className="block max-h-[72vh] max-w-[160px] md:max-w-[240px]"
         role="img"
         aria-label={`Kerala map — ${year}, governed by ${allianceName}`}
