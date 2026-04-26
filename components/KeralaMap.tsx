@@ -33,7 +33,7 @@ export default function KeralaMap({ year, government, allianceColour, allianceNa
   const [capitalPt, setCapitalPt] = useState<[number, number] | null>(null)
 
   const isPR = government?.type === 'presidents_rule'
-  const cmName = isPR ? "President's Rule" : (government?.cm ?? '—')
+  const cmName = isPR ? "President's Rule" : (government?.cm?.name ?? '—')
   const termStart = government ? new Date(government.start_date).getFullYear() : '—'
   const termEnd = government?.end_date ? new Date(government.end_date).getFullYear() : 'Present'
 
@@ -66,7 +66,7 @@ export default function KeralaMap({ year, government, allianceColour, allianceNa
   }
 
   return (
-    <div ref={containerRef} className="relative flex items-center justify-center w-full h-full">
+    <div ref={containerRef} className="relative flex items-center justify-center w-full h-auto md:h-full">
       {/* Kerala · year label */}
       <div
         style={{
@@ -81,7 +81,7 @@ export default function KeralaMap({ year, government, allianceColour, allianceNa
       <svg
         ref={svgRef}
         viewBox={`0 0 ${W} ${H}`}
-        style={{ display: 'block', maxHeight: '72vh', maxWidth: 240 }}
+        className="block max-h-[72vh] max-w-[160px] md:max-w-[240px]"
         role="img"
         aria-label={`Kerala map — ${year}, governed by ${allianceName}`}
         onMouseMove={handleMouseMove}

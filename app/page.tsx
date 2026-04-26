@@ -129,7 +129,6 @@ export default function Home() {
           style={{
             background: '#fff',
             borderBottom: '0.5px solid #E0E0E0',
-            height: 220,
             position: 'relative',
             display: 'flex',
             alignItems: 'center',

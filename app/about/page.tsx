@@ -105,7 +105,7 @@ export default function AboutPage() {
           in the description.
         </p>
         <a
-          href="https://github.com/aatchi-in/aatchi"
+          href="https://github.com/intuitive-fellow/aatchi"
           target="_blank"
           rel="noopener noreferrer"
           style={{

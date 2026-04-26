@@ -1,30 +1,55 @@
-[
-  {
-    "id": "LDF",
-    "name": "Left Democratic Front",
-    "short_name": "LDF",
-    "color": "#C62828",
-    "description": "Left-wing alliance led by CPI(M), dominant from 1980 onwards"
-  },
-  {
-    "id": "UDF",
-    "name": "United Democratic Front",
-    "short_name": "UDF",
-    "color": "#1565C0",
-    "description": "Centre alliance led by INC, alternates power with LDF"
-  },
-  {
-    "id": "NDA",
-    "name": "National Democratic Alliance",
-    "short_name": "NDA",
-    "color": "#FF8F00",
-    "description": "Right-wing alliance led by BJP, marginal presence in Kerala"
-  },
-  {
-    "id": "NONE",
-    "name": "Pre-alliance era",
-    "short_name": "Pre-alliance",
-    "color": "#B0BEC5",
-    "description": "Governments formed before the LDF/UDF alliance system crystallised (pre-1980)"
-  }
-]
+{
+  "$schema": "./schemas/alliances.schema.json",
+  "version": "1.0.0",
+  "last_updated": "2024-01-01",
+  "alliances": [
+    {
+      "id": "LDF",
+      "name": "Left Democratic Front",
+      "short_name": "LDF",
+      "color": "#C62828",
+      "pattern": "solid",
+      "description": "Left-wing coalition led by CPI(M). Has governed Kerala alternately since 1980. Includes CPI(M), CPI, RSP, and smaller left parties.",
+      "lead_party_id": "CPI-M",
+      "active": true,
+      "formed_year": 1980,
+      "states": ["Kerala"]
+    },
+    {
+      "id": "UDF",
+      "name": "United Democratic Front",
+      "short_name": "UDF",
+      "color": "#1565C0",
+      "pattern": "solid",
+      "description": "Centre-left coalition led by INC. Includes Indian National Congress, IUML, KC(M), and allied parties.",
+      "lead_party_id": "INC",
+      "active": true,
+      "formed_year": 1980,
+      "states": ["Kerala"]
+    },
+    {
+      "id": "NDA",
+      "name": "National Democratic Alliance",
+      "short_name": "NDA",
+      "color": "#E65100",
+      "pattern": "solid",
+      "description": "Right-wing national coalition led by BJP. Marginal presence in Kerala state politics.",
+      "lead_party_id": "BJP",
+      "active": true,
+      "formed_year": 1998,
+      "states": ["national"]
+    },
+    {
+      "id": "NONE",
+      "name": "No Alliance / Independent",
+      "short_name": "Independent",
+      "color": "#B0BEC5",
+      "pattern": "solid",
+      "description": "Used for pre-alliance era governments or independent formations.",
+      "lead_party_id": null,
+      "active": true,
+      "formed_year": null,
+      "states": []
+    }
+  ]
+}

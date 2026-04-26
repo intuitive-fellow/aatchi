@@ -1,4 +1,4 @@
-import type { Government, Party, Alliance } from '@/schemas'
+import type { Government, Party } from '@/schemas'
 import { formatDate, formatDuration } from '@/lib/data'
 
 interface Props {
@@ -95,12 +95,12 @@ export default function GovernmentCard({
     ? Math.round((government.seats_won / government.total_seats) * 100)
     : 0
 
-  const coalitionNames = government.coalition_party_ids.map(id => {
+  const coalitionNames = government.coalition_partners.map(id => {
     const p = parties.find(p => p.id === id)
     return p?.short_name ?? id
   })
 
-  const hasMidTermChange = government.cm_changes.length > 1
+  const hasMidTermChange = (government.cm_changes?.length ?? 0) > 1
 
   return (
     <div>
@@ -137,7 +137,7 @@ export default function GovernmentCard({
             letterSpacing: '-0.5px', lineHeight: 1.15, marginBottom: 6,
           }}
         >
-          {government.cm}
+          {government.cm?.name}
         </div>
         <div
           style={{
@@ -159,9 +159,9 @@ export default function GovernmentCard({
           }}
         >
           <div style={{ fontWeight: 500, marginBottom: 8 }}>
-            This term had {government.cm_changes.length} Chief Ministers
+            This term had {government.cm_changes?.length ?? 0} Chief Ministers
           </div>
-          {government.cm_changes.map((c, i) => (
+          {(government.cm_changes ?? []).map((c, i) => (
             <div
               key={i}
               style={{
@@ -178,9 +178,9 @@ export default function GovernmentCard({
                 }}
               />
               <div>
-                <div style={{ fontSize: 12, fontWeight: 500, color: '#1E3A8A' }}>{c.name}</div>
+                <div style={{ fontSize: 12, fontWeight: 500, color: '#1E3A8A' }}>{c.cm_name}</div>
                 <div style={{ fontSize: 11, color: '#3B6FB6', fontVariantNumeric: 'tabular-nums' }}>
-                  {formatDate(c.from)} – {formatDate(c.to)}
+                  {formatDate(c.start_date)} – {formatDate(c.end_date)}
                 </div>
                 {c.reason && (
                   <div style={{ fontSize: 11, color: '#5A7AAB', fontStyle: 'italic', marginTop: 2 }}>
@@ -200,7 +200,7 @@ export default function GovernmentCard({
           value={`${formatDate(government.start_date)} – ${formatDate(government.end_date)}`}
           mono
         />
-        <MetaCell label="Government" value={`#${government.id.split('-')[1]} govt`} />
+        <MetaCell label="Government" value={`#${government.government_number}`} />
         <MetaCell label="Election" value={government.election_year?.toString() ?? '—'} />
         <MetaCell label="Duration" value={formatDuration(government.start_date, government.end_date)} />
       </div>

@@ -71,7 +71,7 @@ export default function Header() {
           style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}
         >
           <LogoMark size={36} />
-          <Wordmark size={25} />
+          <Wordmark size={24} />
         </Link>
 
         {/* Nav links */}
@@ -83,7 +83,7 @@ export default function Header() {
             Data
           </Link>
           <a
-            href="https://github.com/aatchi-in/aatchi"
+            href="https://github.com/intuitive-fellow/aatchi"
             target="_blank"
             rel="noopener noreferrer"
             style={{

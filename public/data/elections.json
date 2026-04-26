@@ -1,18 +1,107 @@
-[
-  { "id": "KL-1957", "state_id": "KL", "year": 1957, "total_seats": 126, "results": [{ "party_id": "CPIM", "seats": 60 }, { "party_id": "INC", "seats": 45 }] },
-  { "id": "KL-1960", "state_id": "KL", "year": 1960, "total_seats": 126, "results": [{ "party_id": "INC", "seats": 63 }, { "party_id": "PSP", "seats": 20 }, { "party_id": "IUML", "seats": 11 }] },
-  { "id": "KL-1965", "state_id": "KL", "year": 1965, "total_seats": 133, "results": [{ "party_id": "CPIM", "seats": 40 }, { "party_id": "INC", "seats": 36 }] },
-  { "id": "KL-1967", "state_id": "KL", "year": 1967, "total_seats": 133, "results": [{ "party_id": "CPIM", "seats": 52 }, { "party_id": "CPI", "seats": 19 }, { "party_id": "IUML", "seats": 14 }] },
-  { "id": "KL-1970", "state_id": "KL", "year": 1970, "total_seats": 133, "results": [{ "party_id": "CPI", "seats": 32 }, { "party_id": "INC", "seats": 32 }] },
-  { "id": "KL-1977", "state_id": "KL", "year": 1977, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 38 }, { "party_id": "IUML", "seats": 21 }, { "party_id": "CPIM", "seats": 17 }] },
-  { "id": "KL-1980", "state_id": "KL", "year": 1980, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 47 }, { "party_id": "CPI", "seats": 17 }, { "party_id": "RSP", "seats": 9 }] },
-  { "id": "KL-1982", "state_id": "KL", "year": 1982, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 40 }, { "party_id": "IUML", "seats": 20 }, { "party_id": "KCM", "seats": 4 }] },
-  { "id": "KL-1987", "state_id": "KL", "year": 1987, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 40 }, { "party_id": "CPI", "seats": 11 }, { "party_id": "RSP", "seats": 5 }] },
-  { "id": "KL-1991", "state_id": "KL", "year": 1991, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 52 }, { "party_id": "IUML", "seats": 15 }, { "party_id": "KCM", "seats": 6 }] },
-  { "id": "KL-1996", "state_id": "KL", "year": 1996, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 40 }, { "party_id": "CPI", "seats": 14 }, { "party_id": "RSP", "seats": 6 }] },
-  { "id": "KL-2001", "state_id": "KL", "year": 2001, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 63 }, { "party_id": "IUML", "seats": 16 }, { "party_id": "KCM", "seats": 9 }] },
-  { "id": "KL-2006", "state_id": "KL", "year": 2006, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 61 }, { "party_id": "CPI", "seats": 17 }, { "party_id": "RSP", "seats": 6 }] },
-  { "id": "KL-2011", "state_id": "KL", "year": 2011, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 38 }, { "party_id": "IUML", "seats": 20 }, { "party_id": "KCM", "seats": 8 }] },
-  { "id": "KL-2016", "state_id": "KL", "year": 2016, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 58 }, { "party_id": "CPI", "seats": 19 }, { "party_id": "NCP", "seats": 2 }] },
-  { "id": "KL-2021", "state_id": "KL", "year": 2021, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 62 }, { "party_id": "CPI", "seats": 17 }, { "party_id": "RSP", "seats": 3 }] }
-]
+{
+  "$schema": "./schemas/elections.schema.json",
+  "version": "1.0.0",
+  "last_updated": "2024-01-01",
+  "state_id": "KL",
+  "elections": [
+    {
+      "id": "KL-ELEC-1957",
+      "state_id": "KL",
+      "year": 1957,
+      "election_type": "state",
+      "date": "1957-02-28",
+      "total_seats": 126,
+      "voter_turnout_percent": 68.3,
+      "result_government_id": "KL-1957-01",
+      "verdict": "LDF precursor majority",
+      "results": [
+        { "party_id": "CPI", "alliance_id": "NONE", "seats_won": 60, "votes_percent": 35.3 },
+        { "party_id": "INC", "alliance_id": "NONE", "seats_won": 43, "votes_percent": 37.8 },
+        { "party_id": "PSP", "alliance_id": "NONE", "seats_won": 9, "votes_percent": 11.1 },
+        { "party_id": "IUML", "alliance_id": "NONE", "seats_won": 8, "votes_percent": 7.0 },
+        { "party_id": "OTHERS", "alliance_id": null, "seats_won": 6, "votes_percent": 8.8 }
+      ],
+      "source": "ECI"
+    },
+    {
+      "id": "KL-ELEC-1960",
+      "state_id": "KL",
+      "year": 1960,
+      "election_type": "state",
+      "date": "1960-02-01",
+      "total_seats": 127,
+      "voter_turnout_percent": 70.1,
+      "result_government_id": "KL-1960-01",
+      "verdict": "Congress-PSP coalition",
+      "results": [
+        { "party_id": "INC", "alliance_id": "NONE", "seats_won": 63, "votes_percent": 38.9 },
+        { "party_id": "CPI", "alliance_id": "NONE", "seats_won": 29, "votes_percent": 21.9 },
+        { "party_id": "PSP", "alliance_id": "NONE", "seats_won": 20, "votes_percent": 9.9 },
+        { "party_id": "IUML", "alliance_id": "NONE", "seats_won": 11, "votes_percent": 7.8 },
+        { "party_id": "OTHERS", "alliance_id": null, "seats_won": 4, "votes_percent": 21.5 }
+      ],
+      "source": "ECI"
+    },
+    {
+      "id": "KL-ELEC-1982",
+      "state_id": "KL",
+      "year": 1982,
+      "election_type": "state",
+      "date": "1982-01-19",
+      "total_seats": 140,
+      "voter_turnout_percent": 75.9,
+      "result_government_id": "KL-1982-01",
+      "verdict": "UDF majority",
+      "results": [
+        { "party_id": "INC", "alliance_id": "UDF", "seats_won": 40, "votes_percent": 28.1 },
+        { "party_id": "CPI-M", "alliance_id": "LDF", "seats_won": 26, "votes_percent": 19.9 },
+        { "party_id": "IUML", "alliance_id": "UDF", "seats_won": 19, "votes_percent": 7.0 },
+        { "party_id": "CPI", "alliance_id": "LDF", "seats_won": 17, "votes_percent": 8.9 },
+        { "party_id": "OTHERS", "alliance_id": null, "seats_won": 38, "votes_percent": 36.1 }
+      ],
+      "source": "ECI"
+    },
+    {
+      "id": "KL-ELEC-2016",
+      "state_id": "KL",
+      "year": 2016,
+      "election_type": "state",
+      "date": "2016-05-16",
+      "total_seats": 140,
+      "voter_turnout_percent": 77.1,
+      "result_government_id": "KL-2016-01",
+      "verdict": "LDF majority",
+      "results": [
+        { "party_id": "CPI-M", "alliance_id": "LDF", "seats_won": 58, "votes_percent": 26.5 },
+        { "party_id": "INC", "alliance_id": "UDF", "seats_won": 22, "votes_percent": 22.1 },
+        { "party_id": "IUML", "alliance_id": "UDF", "seats_won": 18, "votes_percent": 7.1 },
+        { "party_id": "CPI", "alliance_id": "LDF", "seats_won": 19, "votes_percent": 8.1 },
+        { "party_id": "KC-M", "alliance_id": "UDF", "seats_won": 6, "votes_percent": 2.6 },
+        { "party_id": "BJP", "alliance_id": "NDA", "seats_won": 1, "votes_percent": 10.5 },
+        { "party_id": "OTHERS", "alliance_id": null, "seats_won": 16, "votes_percent": 23.1 }
+      ],
+      "source": "ECI"
+    },
+    {
+      "id": "KL-ELEC-2021",
+      "state_id": "KL",
+      "year": 2021,
+      "election_type": "state",
+      "date": "2021-04-06",
+      "total_seats": 140,
+      "voter_turnout_percent": 74.8,
+      "result_government_id": "KL-2021-01",
+      "verdict": "Historic LDF repeat — first re-election in 40 years",
+      "results": [
+        { "party_id": "CPI-M", "alliance_id": "LDF", "seats_won": 62, "votes_percent": 25.7 },
+        { "party_id": "INC", "alliance_id": "UDF", "seats_won": 21, "votes_percent": 22.6 },
+        { "party_id": "CPI", "alliance_id": "LDF", "seats_won": 17, "votes_percent": 8.3 },
+        { "party_id": "IUML", "alliance_id": "UDF", "seats_won": 15, "votes_percent": 6.6 },
+        { "party_id": "KC-M", "alliance_id": "UDF", "seats_won": 5, "votes_percent": 2.4 },
+        { "party_id": "BJP", "alliance_id": "NDA", "seats_won": 0, "votes_percent": 11.3 },
+        { "party_id": "OTHERS", "alliance_id": null, "seats_won": 20, "votes_percent": 23.1 }
+      ],
+      "source": "ECI"
+    }
+  ]
+}

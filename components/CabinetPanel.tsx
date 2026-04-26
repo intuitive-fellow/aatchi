@@ -122,7 +122,7 @@ export default function CabinetPanel({
             <div style={{ fontSize: 12, color: '#999', marginTop: 3 }}>
               {isPR
                 ? `${government.start_date.slice(0, 4)} – ${government.end_date?.slice(0, 4) ?? 'Present'}`
-                : `${government.cm} · ${ministers.length} ministers`}
+                : `${government.cm?.name} · ${ministers.length} ministers`}
             </div>
           </div>
           <button

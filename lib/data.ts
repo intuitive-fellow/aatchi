@@ -1,16 +1,16 @@
 import type { Alliance, Cabinet, Government, Party, State } from '@/schemas'
 
-import rawAlliances from '@/public/data/alliances.json'
-import rawCabinets from '@/public/data/cabinets.json'
-import rawGovernments from '@/public/data/governments.json'
-import rawParties from '@/public/data/parties.json'
-import rawStates from '@/public/data/states.json'
+import rawAlliancesFile from '@/public/data/alliances.json'
+import rawCabinetsFile from '@/public/data/cabinets.json'
+import rawGovernmentsFile from '@/public/data/governments.json'
+import rawPartiesFile from '@/public/data/parties.json'
+import rawStatesFile from '@/public/data/states.json'
 
-const alliances = rawAlliances as Alliance[]
-const cabinets = rawCabinets as Cabinet[]
-const governments = rawGovernments as Government[]
-const parties = rawParties as Party[]
-const states = rawStates as State[]
+const alliances = rawAlliancesFile.alliances as Alliance[]
+const cabinets = rawCabinetsFile.cabinets as Cabinet[]
+const governments = rawGovernmentsFile.governments as Government[]
+const parties = rawPartiesFile.parties as Party[]
+const states = rawStatesFile.states as State[]
 
 export function getAllGovernments(stateId: string): Government[] {
   return governments.filter(g => g.state_id === stateId)
@@ -66,7 +66,7 @@ export function getAllianceColour(
   alliancesList: Alliance[],
 ): string {
   if (government.type === 'presidents_rule') return '#757575'
-  if (government.ruling_alliance_id === 'NONE') {
+  if (!government.ruling_alliance_id || government.ruling_alliance_id === 'NONE') {
     const party = partiesList.find(p => p.id === government.ruling_party_id)
     return party?.color ?? '#B0BEC5'
   }

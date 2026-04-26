@@ -1,14 +1,124 @@
-[
-  { "id": "CPIM", "name": "Communist Party of India (Marxist)", "short_name": "CPI(M)", "color": "#C62828", "alliance_id": "LDF" },
-  { "id": "CPI", "name": "Communist Party of India", "short_name": "CPI", "color": "#B71C1C", "alliance_id": "LDF" },
-  { "id": "RSP", "name": "Revolutionary Socialist Party", "short_name": "RSP", "color": "#E53935", "alliance_id": "LDF" },
-  { "id": "JDS", "name": "Janata Dal (Secular)", "short_name": "JD(S)", "color": "#1B5E20", "alliance_id": "LDF" },
-  { "id": "NCP", "name": "Nationalist Congress Party", "short_name": "NCP", "color": "#2E7D32", "alliance_id": "LDF" },
-  { "id": "INL", "name": "Indian National League", "short_name": "INL", "color": "#388E3C", "alliance_id": "LDF" },
-  { "id": "KCB", "name": "Kerala Congress (B)", "short_name": "KC(B)", "color": "#558B2F", "alliance_id": "LDF" },
-  { "id": "INC", "name": "Indian National Congress", "short_name": "INC", "color": "#1565C0", "alliance_id": "UDF" },
-  { "id": "IUML", "name": "Indian Union Muslim League", "short_name": "IUML", "color": "#0D47A1", "alliance_id": "UDF" },
-  { "id": "KCM", "name": "Kerala Congress (M)", "short_name": "KC(M)", "color": "#0277BD", "alliance_id": "UDF" },
-  { "id": "KCJ", "name": "Kerala Congress (Jacob)", "short_name": "KC(J)", "color": "#01579B", "alliance_id": "UDF" },
-  { "id": "PSP", "name": "Praja Socialist Party", "short_name": "PSP", "color": "#7E57C2", "alliance_id": "NONE" }
-]
+{
+  "$schema": "./schemas/parties.schema.json",
+  "version": "1.0.0",
+  "last_updated": "2024-01-01",
+  "parties": [
+    {
+      "id": "CPI-M",
+      "name": "Communist Party of India (Marxist)",
+      "short_name": "CPI(M)",
+      "abbreviation": "CPIM",
+      "alliance_id": "LDF",
+      "color": "#E53935",
+      "founded_year": 1964,
+      "ideology": ["Marxism", "Communism", "Left-wing"],
+      "national_or_state": "national",
+      "active": true,
+      "notes": "Dominant partner of LDF. Split from CPI in 1964 Calcutta Congress."
+    },
+    {
+      "id": "CPI",
+      "name": "Communist Party of India",
+      "short_name": "CPI",
+      "abbreviation": "CPI",
+      "alliance_id": "LDF",
+      "color": "#B71C1C",
+      "founded_year": 1920,
+      "ideology": ["Communism", "Left-wing"],
+      "national_or_state": "national",
+      "active": true,
+      "notes": "Original communist party. Kerala's first CM was from CPI."
+    },
+    {
+      "id": "INC",
+      "name": "Indian National Congress",
+      "short_name": "Congress",
+      "abbreviation": "INC",
+      "alliance_id": "UDF",
+      "color": "#1565C0",
+      "founded_year": 1885,
+      "ideology": ["Social democracy", "Centrism"],
+      "national_or_state": "national",
+      "active": true,
+      "notes": "Dominant partner of UDF in Kerala."
+    },
+    {
+      "id": "IUML",
+      "name": "Indian Union Muslim League",
+      "short_name": "Muslim League",
+      "abbreviation": "IUML",
+      "alliance_id": "UDF",
+      "color": "#2E7D32",
+      "founded_year": 1948,
+      "ideology": ["Social conservatism", "Minority rights"],
+      "national_or_state": "state",
+      "active": true,
+      "notes": "Key UDF partner. Strong base in Malabar region."
+    },
+    {
+      "id": "RSP",
+      "name": "Revolutionary Socialist Party",
+      "short_name": "RSP",
+      "abbreviation": "RSP",
+      "alliance_id": "LDF",
+      "color": "#C62828",
+      "founded_year": 1940,
+      "ideology": ["Democratic socialism", "Left-wing"],
+      "national_or_state": "state",
+      "active": true,
+      "notes": "LDF partner. Strong in Alleppey and Pathanamthitta."
+    },
+    {
+      "id": "KC-M",
+      "name": "Kerala Congress (M)",
+      "short_name": "KC(M)",
+      "abbreviation": "KCM",
+      "alliance_id": "UDF",
+      "color": "#FF6F00",
+      "founded_year": 1979,
+      "ideology": ["Christian democracy", "Agrarianism"],
+      "national_or_state": "state",
+      "active": true,
+      "notes": "UDF partner. Dominant in central Travancore."
+    },
+    {
+      "id": "BJP",
+      "name": "Bharatiya Janata Party",
+      "short_name": "BJP",
+      "abbreviation": "BJP",
+      "alliance_id": "NDA",
+      "color": "#E65100",
+      "founded_year": 1980,
+      "ideology": ["Hindu nationalism", "Right-wing"],
+      "national_or_state": "national",
+      "active": true,
+      "notes": "Marginal presence in Kerala historically. Growing in Thiruvananthapuram."
+    },
+    {
+      "id": "JD-S",
+      "name": "Janata Dal (Secular)",
+      "short_name": "JD(S)",
+      "abbreviation": "JDS",
+      "alliance_id": "LDF",
+      "color": "#00897B",
+      "founded_year": 1999,
+      "ideology": ["Agrarianism", "Social democracy"],
+      "national_or_state": "national",
+      "active": true,
+      "notes": "LDF partner in Kerala."
+    },
+    {
+      "id": "PRESIDENT_RULE",
+      "name": "President's Rule",
+      "short_name": "President's Rule",
+      "abbreviation": "PR",
+      "alliance_id": null,
+      "color": "#757575",
+      "founded_year": null,
+      "ideology": [],
+      "national_or_state": "special",
+      "active": true,
+      "notes": "Article 356 of the Constitution. Direct central government rule."
+    }
+  ]
+}

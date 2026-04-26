@@ -1,188 +1,261 @@
-[
-  {
-    "government_id": "KL-1957-01",
-    "ministers": [
-      { "name": "E.M.S. Namboodiripad", "party_id": "CPIM", "constituency": "Nileshwar", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "C. Achutha Menon", "party_id": "CPI", "constituency": "Kodungallur", "rank": "Cabinet Minister", "portfolios": ["Finance", "Law"] },
-      { "name": "Joseph Mundassery", "party_id": "CPI", "constituency": "Manalur", "rank": "Cabinet Minister", "portfolios": ["Education", "Co-operation"] },
-      { "name": "T.V. Thomas", "party_id": "CPI", "constituency": "Alleppey", "rank": "Cabinet Minister", "portfolios": ["Industries", "Transport"] },
-      { "name": "K.R. Gowri Amma", "party_id": "CPI", "constituency": "Cherthala", "rank": "Cabinet Minister", "portfolios": ["Revenue", "Excise"] },
-      { "name": "P.K. Chathan Master", "party_id": "CPI", "constituency": "Thalassery", "rank": "Cabinet Minister", "portfolios": ["Local Self-Government"] },
-      { "name": "K.P. Gopalan", "party_id": "CPI", "constituency": "Kuthuparamba", "rank": "Cabinet Minister", "portfolios": ["Public Works"] },
-      { "name": "V.R. Krishna Iyer", "party_id": "CPI", "constituency": "Independent", "rank": "Cabinet Minister", "portfolios": ["Law", "Irrigation"] },
-      { "name": "A.R. Menon", "party_id": "CPI", "constituency": "Trichur", "rank": "Cabinet Minister", "portfolios": ["Health"] },
-      { "name": "P.K. Kunju Sahib", "party_id": "CPI", "constituency": "Quilon", "rank": "Cabinet Minister", "portfolios": ["Labour"] },
-      { "name": "T.A. Majeed", "party_id": "CPI", "constituency": "Tirur", "rank": "Cabinet Minister", "portfolios": ["Food"] }
-    ]
-  },
-  {
-    "government_id": "KL-1960-01",
-    "ministers": [
-      { "name": "Pattom A. Thanu Pillai", "party_id": "PSP", "constituency": "Trivandrum II", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "R. Sankar", "party_id": "INC", "constituency": "Kannur", "rank": "Cabinet Minister", "portfolios": ["Finance"] },
-      { "name": "P.P. Ummer Koya", "party_id": "IUML", "constituency": "Tanur", "rank": "Cabinet Minister", "portfolios": ["Education"] },
-      { "name": "K.T. Achuthan", "party_id": "INC", "constituency": "Mavelikara", "rank": "Cabinet Minister", "portfolios": ["Industries"] },
-      { "name": "P.T. Chacko", "party_id": "INC", "constituency": "Meenachil", "rank": "Cabinet Minister", "portfolios": ["Home Affairs"] }
-    ]
-  },
-  {
-    "government_id": "KL-1962-01",
-    "ministers": [
-      { "name": "R. Sankar", "party_id": "INC", "constituency": "Kannur", "rank": "Chief Minister", "portfolios": ["Home", "Finance"] },
-      { "name": "P.T. Chacko", "party_id": "INC", "constituency": "Meenachil", "rank": "Cabinet Minister", "portfolios": ["Home Affairs"] },
-      { "name": "K.T. Jacob", "party_id": "INC", "constituency": "Mannar", "rank": "Cabinet Minister", "portfolios": ["Public Works"] }
-    ]
-  },
-  {
-    "government_id": "KL-1967-01",
-    "ministers": [
-      { "name": "E.M.S. Namboodiripad", "party_id": "CPIM", "constituency": "Pattambi", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "C.H. Mohammed Koya", "party_id": "IUML", "constituency": "Tanur", "rank": "Cabinet Minister", "portfolios": ["Education"] },
-      { "name": "M.N. Govindan Nair", "party_id": "CPI", "constituency": "Trivandrum North", "rank": "Cabinet Minister", "portfolios": ["Industries"] },
-      { "name": "B. Wellington", "party_id": "RSP", "constituency": "Mavelikara", "rank": "Cabinet Minister", "portfolios": ["Public Works"] }
-    ]
-  },
-  {
-    "government_id": "KL-1969-01",
-    "ministers": [
-      { "name": "C. Achutha Menon", "party_id": "CPI", "constituency": "Kodungallur", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "K. Karunakaran", "party_id": "INC", "constituency": "Mala", "rank": "Cabinet Minister", "portfolios": ["Home Affairs"] }
-    ]
-  },
-  {
-    "government_id": "KL-1970-01",
-    "ministers": [
-      { "name": "C. Achutha Menon", "party_id": "CPI", "constituency": "Kodungallur", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "K. Karunakaran", "party_id": "INC", "constituency": "Mala", "rank": "Cabinet Minister", "portfolios": ["Home Affairs"] },
-      { "name": "C.H. Mohammed Koya", "party_id": "IUML", "constituency": "Tanur", "rank": "Cabinet Minister", "portfolios": ["Education"] },
-      { "name": "K.M. Mani", "party_id": "KCM", "constituency": "Pala", "rank": "Cabinet Minister", "portfolios": ["Revenue", "Law"] }
-    ]
-  },
-  {
-    "government_id": "KL-1977-01",
-    "ministers": [
-      { "name": "K. Karunakaran", "party_id": "INC", "constituency": "Mala", "rank": "Chief Minister", "portfolios": ["Home", "Vigilance"] },
-      { "name": "C.H. Mohammed Koya", "party_id": "IUML", "constituency": "Tanur", "rank": "Cabinet Minister", "portfolios": ["Education"] },
-      { "name": "K.M. Mani", "party_id": "KCM", "constituency": "Pala", "rank": "Cabinet Minister", "portfolios": ["Revenue"] },
-      { "name": "A.K. Antony", "party_id": "INC", "constituency": "Kazhakkoottam", "rank": "Cabinet Minister", "portfolios": ["Public Works"] }
-    ]
-  },
-  {
-    "government_id": "KL-1979-01",
-    "ministers": [
-      { "name": "C.H. Mohammed Koya", "party_id": "IUML", "constituency": "Tanur", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] }
-    ]
-  },
-  {
-    "government_id": "KL-1980-01",
-    "ministers": [
-      { "name": "E.K. Nayanar", "party_id": "CPIM", "constituency": "Malampuzha", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "K.M. Mani", "party_id": "KCM", "constituency": "Pala", "rank": "Cabinet Minister", "portfolios": ["Finance"] },
-      { "name": "T.K. Ramakrishnan", "party_id": "CPIM", "constituency": "Quilon", "rank": "Cabinet Minister", "portfolios": ["Industries"] }
-    ]
-  },
-  {
-    "government_id": "KL-1982-01",
-    "ministers": [
-      { "name": "K. Karunakaran", "party_id": "INC", "constituency": "Mala", "rank": "Chief Minister", "portfolios": ["Home", "Vigilance"] },
-      { "name": "K.M. Mani", "party_id": "KCM", "constituency": "Pala", "rank": "Cabinet Minister", "portfolios": ["Finance", "Law"] },
-      { "name": "C.H. Mohammed Koya", "party_id": "IUML", "constituency": "Tanur", "rank": "Cabinet Minister", "portfolios": ["Education"] },
-      { "name": "A.C. Shanmugadas", "party_id": "INC", "constituency": "Vadakara", "rank": "Cabinet Minister", "portfolios": ["Industries"] },
-      { "name": "P.J. Joseph", "party_id": "KCJ", "constituency": "Thodupuzha", "rank": "Cabinet Minister", "portfolios": ["Public Works"] },
-      { "name": "M.P. Gangadharan", "party_id": "INC", "constituency": "Kuttiady", "rank": "Cabinet Minister", "portfolios": ["Local Self-Government"] }
-    ]
-  },
-  {
-    "government_id": "KL-1987-01",
-    "ministers": [
-      { "name": "E.K. Nayanar", "party_id": "CPIM", "constituency": "Trikkaripur", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "K. Pankajakshan", "party_id": "CPIM", "constituency": "Aluva", "rank": "Cabinet Minister", "portfolios": ["Finance"] },
-      { "name": "P.K. Vasudevan Nair", "party_id": "CPI", "constituency": "Adoor", "rank": "Cabinet Minister", "portfolios": ["Industries"] }
-    ]
-  },
-  {
-    "government_id": "KL-1991-01",
-    "ministers": [
-      { "name": "K. Karunakaran", "party_id": "INC", "constituency": "Mala", "rank": "Chief Minister", "portfolios": ["Home"] },
-      { "name": "A.K. Antony", "party_id": "INC", "constituency": "Cherthala", "rank": "Cabinet Minister", "portfolios": ["Civil Supplies", "Co-operation"] },
-      { "name": "K.M. Mani", "party_id": "KCM", "constituency": "Pala", "rank": "Cabinet Minister", "portfolios": ["Finance"] },
-      { "name": "P.K. Kunhalikutty", "party_id": "IUML", "constituency": "Vengara", "rank": "Cabinet Minister", "portfolios": ["Industries"] }
-    ]
-  },
-  {
-    "government_id": "KL-1996-01",
-    "ministers": [
-      { "name": "E.K. Nayanar", "party_id": "CPIM", "constituency": "Thalassery", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "T. Sivadasa Menon", "party_id": "CPIM", "constituency": "Manjeshwar", "rank": "Cabinet Minister", "portfolios": ["Finance"] },
-      { "name": "P.K. Sreemathi", "party_id": "CPIM", "constituency": "Payyannur", "rank": "Cabinet Minister", "portfolios": ["Health"] },
-      { "name": "Susheela Gopalan", "party_id": "CPIM", "constituency": "Chirayinkeezh", "rank": "Cabinet Minister", "portfolios": ["Industries"] }
-    ]
-  },
-  {
-    "government_id": "KL-2001-01",
-    "ministers": [
-      { "name": "A.K. Antony", "party_id": "INC", "constituency": "Cherthala", "rank": "Chief Minister", "portfolios": ["Home", "Vigilance"] },
-      { "name": "Oommen Chandy", "party_id": "INC", "constituency": "Puthuppally", "rank": "Cabinet Minister", "portfolios": ["Finance"] },
-      { "name": "K.M. Mani", "party_id": "KCM", "constituency": "Pala", "rank": "Cabinet Minister", "portfolios": ["Revenue", "Law"] },
-      { "name": "P.K. Kunhalikutty", "party_id": "IUML", "constituency": "Vengara", "rank": "Cabinet Minister", "portfolios": ["Industries"] }
-    ]
-  },
-  {
-    "government_id": "KL-2006-01",
-    "ministers": [
-      { "name": "V.S. Achuthanandan", "party_id": "CPIM", "constituency": "Malampuzha", "rank": "Chief Minister", "portfolios": ["Home", "Vigilance"] },
-      { "name": "Thomas Isaac", "party_id": "CPIM", "constituency": "Alappuzha", "rank": "Cabinet Minister", "portfolios": ["Finance"] },
-      { "name": "Kodiyeri Balakrishnan", "party_id": "CPIM", "constituency": "Thalassery", "rank": "Cabinet Minister", "portfolios": ["Home Affairs"] },
-      { "name": "M.A. Baby", "party_id": "CPIM", "constituency": "Kollam", "rank": "Cabinet Minister", "portfolios": ["Education", "Culture"] },
-      { "name": "P.K. Sreemathi", "party_id": "CPIM", "constituency": "Payyannur", "rank": "Cabinet Minister", "portfolios": ["Health"] }
-    ]
-  },
-  {
-    "government_id": "KL-2011-01",
-    "ministers": [
-      { "name": "Oommen Chandy", "party_id": "INC", "constituency": "Puthuppally", "rank": "Chief Minister", "portfolios": ["Home", "General Administration"] },
-      { "name": "K.M. Mani", "party_id": "KCM", "constituency": "Pala", "rank": "Cabinet Minister", "portfolios": ["Finance", "Law"] },
-      { "name": "P.K. Kunhalikutty", "party_id": "IUML", "constituency": "Vengara", "rank": "Cabinet Minister", "portfolios": ["Industries"] },
-      { "name": "Ramesh Chennithala", "party_id": "INC", "constituency": "Haripad", "rank": "Cabinet Minister", "portfolios": ["Home Affairs"] },
-      { "name": "Thiruvanchoor Radhakrishnan", "party_id": "INC", "constituency": "Kottayam", "rank": "Cabinet Minister", "portfolios": ["Forest", "Environment"] }
-    ]
-  },
-  {
-    "government_id": "KL-2016-01",
-    "ministers": [
-      { "name": "Pinarayi Vijayan", "party_id": "CPIM", "constituency": "Dharmadom", "rank": "Chief Minister", "portfolios": ["Home", "Vigilance", "General Administration"] },
-      { "name": "Thomas Isaac", "party_id": "CPIM", "constituency": "Alappuzha", "rank": "Cabinet Minister", "portfolios": ["Finance", "Coir"] },
-      { "name": "K.K. Shailaja", "party_id": "CPIM", "constituency": "Kuthuparamba", "rank": "Cabinet Minister", "portfolios": ["Health", "Social Justice"] },
-      { "name": "Kadakampally Surendran", "party_id": "CPIM", "constituency": "Kazhakkoottam", "rank": "Cabinet Minister", "portfolios": ["Tourism", "Devaswom"] },
-      { "name": "A.K. Saseendran", "party_id": "NCP", "constituency": "Elathur", "rank": "Cabinet Minister", "portfolios": ["Transport"] },
-      { "name": "M.M. Mani", "party_id": "CPIM", "constituency": "Udumbanchola", "rank": "Cabinet Minister", "portfolios": ["Electricity"] },
-      { "name": "Mathew T. Thomas", "party_id": "JDS", "constituency": "Tiruvalla", "rank": "Cabinet Minister", "portfolios": ["Water Resources"] },
-      { "name": "G. Sudhakaran", "party_id": "CPIM", "constituency": "Ambalappuzha", "rank": "Cabinet Minister", "portfolios": ["Public Works"] }
-    ]
-  },
-  {
-    "government_id": "KL-2021-01",
-    "ministers": [
-      { "name": "Pinarayi Vijayan", "party_id": "CPIM", "constituency": "Dharmadom", "rank": "Chief Minister", "portfolios": ["Home", "Vigilance", "General Administration"] },
-      { "name": "K.N. Balagopal", "party_id": "CPIM", "constituency": "Kottarakkara", "rank": "Cabinet Minister", "portfolios": ["Finance", "Coir"] },
-      { "name": "Veena George", "party_id": "CPIM", "constituency": "Aranmula", "rank": "Cabinet Minister", "portfolios": ["Health", "Women & Child Development"] },
-      { "name": "V. Sivankutty", "party_id": "CPIM", "constituency": "Nemom", "rank": "Cabinet Minister", "portfolios": ["General Education", "Labour"] },
-      { "name": "K. Rajan", "party_id": "CPI", "constituency": "Ollur", "rank": "Cabinet Minister", "portfolios": ["Revenue", "Housing"] },
-      { "name": "M.B. Rajesh", "party_id": "CPIM", "constituency": "Thrithala", "rank": "Cabinet Minister", "portfolios": ["Local Self-Government", "Excise"] },
-      { "name": "R. Bindu", "party_id": "CPIM", "constituency": "Irinjalakuda", "rank": "Cabinet Minister", "portfolios": ["Higher Education", "Social Justice"] },
-      { "name": "P.A. Mohammed Riyas", "party_id": "CPIM", "constituency": "Beypore", "rank": "Cabinet Minister", "portfolios": ["Public Works", "Tourism"] },
-      { "name": "K. Krishnankutty", "party_id": "CPI", "constituency": "Chittur", "rank": "Cabinet Minister", "portfolios": ["Electricity"] },
-      { "name": "Antony Raju", "party_id": "JDS", "constituency": "Thiruvananthapuram", "rank": "Cabinet Minister", "portfolios": ["Transport"] },
-      { "name": "Saji Cherian", "party_id": "CPIM", "constituency": "Chengannur", "rank": "Cabinet Minister", "portfolios": ["Fisheries", "Culture"] },
-      { "name": "V.N. Vasavan", "party_id": "CPIM", "constituency": "Ettumanoor", "rank": "Cabinet Minister", "portfolios": ["Co-operation", "Registration"] },
-      { "name": "Roshy Augustine", "party_id": "KCB", "constituency": "Idukki", "rank": "Cabinet Minister", "portfolios": ["Water Resources"] },
-      { "name": "P. Prasad", "party_id": "CPI", "constituency": "Mavelikkara", "rank": "Cabinet Minister", "portfolios": ["Agriculture"] },
-      { "name": "J. Chinchu Rani", "party_id": "CPI", "constituency": "Chadayamangalam", "rank": "Cabinet Minister", "portfolios": ["Animal Husbandry", "Dairy Development"] },
-      { "name": "A.K. Saseendran", "party_id": "NCP", "constituency": "Elathur", "rank": "Cabinet Minister", "portfolios": ["Forest", "Wildlife"] },
-      { "name": "Ahammad Devarkovil", "party_id": "INL", "constituency": "Kozhikode South", "rank": "Minister of State", "portfolios": ["Ports", "Museums"] },
-      { "name": "G.R. Anil", "party_id": "CPI", "constituency": "Nedumangad", "rank": "Cabinet Minister", "portfolios": ["Food & Civil Supplies"] },
-      { "name": "P. Rajeev", "party_id": "CPIM", "constituency": "Kalamassery", "rank": "Cabinet Minister", "portfolios": ["Industries", "Law"] },
-      { "name": "V. Abdurahiman", "party_id": "IUML", "constituency": "Tanur", "rank": "Minister of State", "portfolios": ["Sports", "Waqf"] }
-    ]
-  }
-]
+{
+  "$schema": "./schemas/cabinets.schema.json",
+  "version": "1.0.0",
+  "last_updated": "2024-01-01",
+  "cabinets": [
+    {
+      "government_id": "KL-2021-01",
+      "state_id": "KL",
+      "sworn_in_date": "2021-05-20",
+      "total_ministers": 21,
+      "sources": ["kerala.gov.in", "ECI", "niyamasabha.org"],
+      "ministers": [
+        {
+          "id": "KL-2021-MIN-001",
+          "name": "Pinarayi Vijayan",
+          "party_id": "CPI-M",
+          "rank": "Chief Minister",
+          "portfolios": ["Home", "Vigilance", "General Administration", "Space Science & Technology"],
+          "constituency": "Dharmadom",
+          "constituency_district": "Kannur",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/Pinarayi_Vijayan"
+        },
+        {
+          "id": "KL-2021-MIN-002",
+          "name": "K.N. Balagopal",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Finance", "Coir"],
+          "constituency": "Kozhikode South",
+          "constituency_district": "Kozhikode",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/K._N._Balagopal"
+        },
+        {
+          "id": "KL-2021-MIN-003",
+          "name": "P. Rajeeve",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Industries", "Law"],
+          "constituency": "Ernakulam",
+          "constituency_district": "Ernakulam",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/P._Rajeeve"
+        },
+        {
+          "id": "KL-2021-MIN-004",
+          "name": "Veena George",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Health", "Women and Child Development"],
+          "constituency": "Aranmula",
+          "constituency_district": "Pathanamthitta",
+          "gender": "F",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/Veena_George"
+        },
+        {
+          "id": "KL-2021-MIN-005",
+          "name": "V. Sivankutty",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["General Education", "Labour"],
+          "constituency": "Nemom",
+          "constituency_district": "Thiruvananthapuram",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/V._Sivankutty"
+        },
+        {
+          "id": "KL-2021-MIN-006",
+          "name": "K. Rajan",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Revenue", "Housing"],
+          "constituency": "Kuthuparamba",
+          "constituency_district": "Kannur",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/K._Rajan_(politician)"
+        },
+        {
+          "id": "KL-2021-MIN-007",
+          "name": "M.B. Rajesh",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Local Self-Government", "Excise"],
+          "constituency": "Thrithala",
+          "constituency_district": "Palakkad",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/M._B._Rajesh"
+        },
+        {
+          "id": "KL-2021-MIN-008",
+          "name": "Antony Raju",
+          "party_id": "JD-S",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Transport"],
+          "constituency": "Thrippunithura",
+          "constituency_district": "Ernakulam",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/Antony_Raju"
+        },
+        {
+          "id": "KL-2021-MIN-009",
+          "name": "P. Prasad",
+          "party_id": "CPI",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Agriculture", "Farmers' Welfare"],
+          "constituency": "Alathur",
+          "constituency_district": "Palakkad",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": null
+        },
+        {
+          "id": "KL-2021-MIN-010",
+          "name": "Ahammad Devarkovil",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Ports", "Museums", "Archaeology"],
+          "constituency": "Kozhikode North",
+          "constituency_district": "Kozhikode",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": null
+        },
+        {
+          "id": "KL-2021-MIN-011",
+          "name": "G.R. Anil",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Food, Civil Supplies & Consumer Affairs"],
+          "constituency": "Attingal",
+          "constituency_district": "Thiruvananthapuram",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": null
+        },
+        {
+          "id": "KL-2021-MIN-012",
+          "name": "K. Krishnankutty",
+          "party_id": "CPI",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Electricity"],
+          "constituency": "Chittur",
+          "constituency_district": "Palakkad",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/K._Krishnankutty"
+        },
+        {
+          "id": "KL-2021-MIN-013",
+          "name": "R. Bindu",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Higher Education"],
+          "constituency": "Irinjalakuda",
+          "constituency_district": "Thrissur",
+          "gender": "F",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/R._Bindu"
+        },
+        {
+          "id": "KL-2021-MIN-014",
+          "name": "P.A. Mohammed Riyas",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Public Works", "Tourism"],
+          "constituency": "Beypore",
+          "constituency_district": "Kozhikode",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": null,
+          "wikipedia_url": "https://en.wikipedia.org/wiki/P._A._Mohammed_Riyas"
+        },
+        {
+          "id": "KL-2021-MIN-015",
+          "name": "Saji Cherian",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Fisheries", "Cultural Affairs", "Parliamentary Affairs"],
+          "constituency": "Puthuppally",
+          "constituency_district": "Kottayam",
+          "gender": "M",
+          "start_date": "2021-05-20",
+          "end_date": "2022-07-05",
+          "wikipedia_url": null,
+          "removal_reason": "Resigned following controversial remarks about the Constitution"
+        }
+      ]
+    },
+    {
+      "government_id": "KL-2016-01",
+      "state_id": "KL",
+      "sworn_in_date": "2016-05-25",
+      "total_ministers": 19,
+      "sources": ["kerala.gov.in", "TCPD-ICoM", "niyamasabha.org"],
+      "ministers": [
+        {
+          "id": "KL-2016-MIN-001",
+          "name": "Pinarayi Vijayan",
+          "party_id": "CPI-M",
+          "rank": "Chief Minister",
+          "portfolios": ["Home", "Vigilance", "General Administration"],
+          "constituency": "Dharmadom",
+          "constituency_district": "Kannur",
+          "gender": "M",
+          "start_date": "2016-05-25",
+          "end_date": "2021-05-20",
+          "wikipedia_url": "https://en.wikipedia.org/wiki/Pinarayi_Vijayan"
+        },
+        {
+          "id": "KL-2016-MIN-002",
+          "name": "Thomas Isaac",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Finance"],
+          "constituency": "Pathanamthitta",
+          "constituency_district": "Pathanamthitta",
+          "gender": "M",
+          "start_date": "2016-05-25",
+          "end_date": "2021-05-20",
+          "wikipedia_url": "https://en.wikipedia.org/wiki/Thomas_Isaac"
+        },
+        {
+          "id": "KL-2016-MIN-003",
+          "name": "E.P. Jayarajan",
+          "party_id": "CPI-M",
+          "rank": "Cabinet Minister",
+          "portfolios": ["Industries", "Sports"],
+          "constituency": "Mattannur",
+          "constituency_district": "Kannur",
+          "gender": "M",
+          "start_date": "2016-05-25",
+          "end_date": "2016-09-14",
+          "wikipedia_url": "https://en.wikipedia.org/wiki/E._P._Jayarajan",
+          "removal_reason": "Resigned over nepotism controversy"
+        }
+      ]
+    }
+  ]
+}
