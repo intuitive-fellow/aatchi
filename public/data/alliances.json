@@ -1,0 +1,30 @@
+[
+  {
+    "id": "LDF",
+    "name": "Left Democratic Front",
+    "short_name": "LDF",
+    "color": "#C62828",
+    "description": "Left-wing alliance led by CPI(M), dominant from 1980 onwards"
+  },
+  {
+    "id": "UDF",
+    "name": "United Democratic Front",
+    "short_name": "UDF",
+    "color": "#1565C0",
+    "description": "Centre alliance led by INC, alternates power with LDF"
+  },
+  {
+    "id": "NDA",
+    "name": "National Democratic Alliance",
+    "short_name": "NDA",
+    "color": "#FF8F00",
+    "description": "Right-wing alliance led by BJP, marginal presence in Kerala"
+  },
+  {
+    "id": "NONE",
+    "name": "Pre-alliance era",
+    "short_name": "Pre-alliance",
+    "color": "#B0BEC5",
+    "description": "Governments formed before the LDF/UDF alliance system crystallised (pre-1980)"
+  }
+]

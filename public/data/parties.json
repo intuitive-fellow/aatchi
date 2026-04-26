@@ -1,0 +1,14 @@
+[
+  { "id": "CPIM", "name": "Communist Party of India (Marxist)", "short_name": "CPI(M)", "color": "#C62828", "alliance_id": "LDF" },
+  { "id": "CPI", "name": "Communist Party of India", "short_name": "CPI", "color": "#B71C1C", "alliance_id": "LDF" },
+  { "id": "RSP", "name": "Revolutionary Socialist Party", "short_name": "RSP", "color": "#E53935", "alliance_id": "LDF" },
+  { "id": "JDS", "name": "Janata Dal (Secular)", "short_name": "JD(S)", "color": "#1B5E20", "alliance_id": "LDF" },
+  { "id": "NCP", "name": "Nationalist Congress Party", "short_name": "NCP", "color": "#2E7D32", "alliance_id": "LDF" },
+  { "id": "INL", "name": "Indian National League", "short_name": "INL", "color": "#388E3C", "alliance_id": "LDF" },
+  { "id": "KCB", "name": "Kerala Congress (B)", "short_name": "KC(B)", "color": "#558B2F", "alliance_id": "LDF" },
+  { "id": "INC", "name": "Indian National Congress", "short_name": "INC", "color": "#1565C0", "alliance_id": "UDF" },
+  { "id": "IUML", "name": "Indian Union Muslim League", "short_name": "IUML", "color": "#0D47A1", "alliance_id": "UDF" },
+  { "id": "KCM", "name": "Kerala Congress (M)", "short_name": "KC(M)", "color": "#0277BD", "alliance_id": "UDF" },
+  { "id": "KCJ", "name": "Kerala Congress (Jacob)", "short_name": "KC(J)", "color": "#01579B", "alliance_id": "UDF" },
+  { "id": "PSP", "name": "Praja Socialist Party", "short_name": "PSP", "color": "#7E57C2", "alliance_id": "NONE" }
+]

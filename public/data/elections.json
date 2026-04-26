@@ -1,0 +1,18 @@
+[
+  { "id": "KL-1957", "state_id": "KL", "year": 1957, "total_seats": 126, "results": [{ "party_id": "CPIM", "seats": 60 }, { "party_id": "INC", "seats": 45 }] },
+  { "id": "KL-1960", "state_id": "KL", "year": 1960, "total_seats": 126, "results": [{ "party_id": "INC", "seats": 63 }, { "party_id": "PSP", "seats": 20 }, { "party_id": "IUML", "seats": 11 }] },
+  { "id": "KL-1965", "state_id": "KL", "year": 1965, "total_seats": 133, "results": [{ "party_id": "CPIM", "seats": 40 }, { "party_id": "INC", "seats": 36 }] },
+  { "id": "KL-1967", "state_id": "KL", "year": 1967, "total_seats": 133, "results": [{ "party_id": "CPIM", "seats": 52 }, { "party_id": "CPI", "seats": 19 }, { "party_id": "IUML", "seats": 14 }] },
+  { "id": "KL-1970", "state_id": "KL", "year": 1970, "total_seats": 133, "results": [{ "party_id": "CPI", "seats": 32 }, { "party_id": "INC", "seats": 32 }] },
+  { "id": "KL-1977", "state_id": "KL", "year": 1977, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 38 }, { "party_id": "IUML", "seats": 21 }, { "party_id": "CPIM", "seats": 17 }] },
+  { "id": "KL-1980", "state_id": "KL", "year": 1980, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 47 }, { "party_id": "CPI", "seats": 17 }, { "party_id": "RSP", "seats": 9 }] },
+  { "id": "KL-1982", "state_id": "KL", "year": 1982, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 40 }, { "party_id": "IUML", "seats": 20 }, { "party_id": "KCM", "seats": 4 }] },
+  { "id": "KL-1987", "state_id": "KL", "year": 1987, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 40 }, { "party_id": "CPI", "seats": 11 }, { "party_id": "RSP", "seats": 5 }] },
+  { "id": "KL-1991", "state_id": "KL", "year": 1991, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 52 }, { "party_id": "IUML", "seats": 15 }, { "party_id": "KCM", "seats": 6 }] },
+  { "id": "KL-1996", "state_id": "KL", "year": 1996, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 40 }, { "party_id": "CPI", "seats": 14 }, { "party_id": "RSP", "seats": 6 }] },
+  { "id": "KL-2001", "state_id": "KL", "year": 2001, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 63 }, { "party_id": "IUML", "seats": 16 }, { "party_id": "KCM", "seats": 9 }] },
+  { "id": "KL-2006", "state_id": "KL", "year": 2006, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 61 }, { "party_id": "CPI", "seats": 17 }, { "party_id": "RSP", "seats": 6 }] },
+  { "id": "KL-2011", "state_id": "KL", "year": 2011, "total_seats": 140, "results": [{ "party_id": "INC", "seats": 38 }, { "party_id": "IUML", "seats": 20 }, { "party_id": "KCM", "seats": 8 }] },
+  { "id": "KL-2016", "state_id": "KL", "year": 2016, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 58 }, { "party_id": "CPI", "seats": 19 }, { "party_id": "NCP", "seats": 2 }] },
+  { "id": "KL-2021", "state_id": "KL", "year": 2021, "total_seats": 140, "results": [{ "party_id": "CPIM", "seats": 62 }, { "party_id": "CPI", "seats": 17 }, { "party_id": "RSP", "seats": 3 }] }
+]

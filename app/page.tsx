@@ -1,65 +1,200 @@
-import Image from "next/image";
+'use client'
+
+import dynamic from 'next/dynamic'
+import { useState, useMemo } from 'react'
+import TimelineSlider, { YEAR_MIN, YEAR_MAX } from '@/components/TimelineSlider'
+import GovernmentCard from '@/components/GovernmentCard'
+import CabinetPanel from '@/components/CabinetPanel'
+import PartyLegend from '@/components/PartyLegend'
+import {
+  getGovernmentForYear,
+  getCabinetForGovernment,
+  getAllianceColour,
+  getAlliances,
+  getAllParties,
+  getColourForYear,
+} from '@/lib/data'
+
+const KeralaMap = dynamic(() => import('@/components/KeralaMap'), {
+  ssr: false,
+  loading: () => (
+    <div
+      style={{
+        width: 180,
+        height: 420,
+        background: '#E0E0E0',
+        borderRadius: 8,
+        opacity: 0.5,
+      }}
+    />
+  ),
+})
+
+const alliances = getAlliances()
+const parties = getAllParties()
+
+const trackSegments = Array.from({ length: YEAR_MAX - YEAR_MIN + 1 }, (_, i) => ({
+  year: YEAR_MIN + i,
+  colour: getColourForYear(YEAR_MIN + i, 'KL'),
+}))
 
 export default function Home() {
+  const [year, setYear] = useState(2021)
+  const [cabinetOpen, setCabinetOpen] = useState(false)
+
+  const government = useMemo(() => getGovernmentForYear(year, 'KL'), [year])
+  const cabinet = useMemo(
+    () => (government ? getCabinetForGovernment(government.id) : null),
+    [government],
+  )
+  const allianceColour = useMemo(
+    () => (government ? getAllianceColour(government, parties, alliances) : '#E0E0E0'),
+    [government],
+  )
+  const allianceName = useMemo(() => {
+    if (!government) return '—'
+    if (government.type === 'presidents_rule') return "President's Rule"
+    if (government.ruling_alliance_id === 'NONE') return 'Pre-alliance'
+    return alliances.find(a => a.id === government.ruling_alliance_id)?.short_name ?? '—'
+  }, [government])
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Desktop two-column layout */}
+      <main
+        className="hidden md:grid"
+        style={{ gridTemplateColumns: '1fr 1fr', height: 'calc(100vh - 82px)' }}
+      >
+        {/* Left — map */}
+        <div
+          style={{
+            background: '#fff',
+            borderRight: '0.5px solid #E0E0E0',
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 24,
+            overflow: 'hidden',
+          }}
+        >
+          <KeralaMap
+            year={year}
+            government={government}
+            allianceColour={allianceColour}
+            allianceName={allianceName}
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+        {/* Right — slider + card */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            padding: 24,
+            overflowY: 'auto',
+            background: '#fff',
+          }}
+        >
+          <TimelineSlider
+            year={year}
+            onChange={setYear}
+            allianceColour={allianceColour}
+            trackSegments={trackSegments}
+          />
+          <PartyLegend />
+          <div
+            style={{
+              height: '0.5px',
+              background: '#F0F0F0',
+              margin: '24px -24px',
+              width: 'calc(100% + 48px)',
+            }}
+          />
+          {government && (
+            <GovernmentCard
+              government={government}
+              allianceColour={allianceColour}
+              allianceName={allianceName}
+              parties={parties}
+              onOpenCabinet={() => setCabinetOpen(true)}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          )}
         </div>
       </main>
-    </div>
-  );
+
+      {/* Mobile stacked layout */}
+      <main className="md:hidden">
+        <div
+          style={{
+            background: '#fff',
+            borderBottom: '0.5px solid #E0E0E0',
+            height: 220,
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <div
+            style={{
+              position: 'absolute', top: 12, left: 14,
+              background: '#111', color: '#fff', fontSize: 11,
+              fontFamily: 'ui-monospace, monospace',
+              padding: '3px 8px', borderRadius: 4, letterSpacing: '1px',
+            }}
+          >
+            {year}
+          </div>
+          <div
+            style={{
+              position: 'absolute', top: 12, right: 14,
+              fontSize: 11, color: '#999',
+              letterSpacing: '0.05em', textTransform: 'uppercase',
+            }}
+          >
+            Kerala
+          </div>
+          <KeralaMap
+            year={year}
+            government={government}
+            allianceColour={allianceColour}
+            allianceName={allianceName}
+          />
+        </div>
+
+        <div style={{ padding: 16, background: '#fff', borderBottom: '0.5px solid #F0F0F0' }}>
+          <TimelineSlider
+            year={year}
+            onChange={setYear}
+            allianceColour={allianceColour}
+            trackSegments={trackSegments}
+          />
+          <PartyLegend />
+        </div>
+
+        <div style={{ padding: 16, background: '#fff' }}>
+          {government && (
+            <GovernmentCard
+              government={government}
+              allianceColour={allianceColour}
+              allianceName={allianceName}
+              parties={parties}
+              onOpenCabinet={() => setCabinetOpen(true)}
+            />
+          )}
+        </div>
+      </main>
+
+      <CabinetPanel
+        open={cabinetOpen}
+        onClose={() => setCabinetOpen(false)}
+        government={government}
+        cabinet={cabinet}
+        allianceColour={allianceColour}
+        allianceName={allianceName}
+        parties={parties}
+      />
+    </>
+  )
 }
