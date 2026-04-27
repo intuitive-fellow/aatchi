@@ -2,7 +2,7 @@
 
 An open-source civic data platform visualising state-wise political governance in India from 1957 to present. Kerala is the pilot state.
 
-Live: coming soon
+Live: [aatchi](https://aatchi.vercel.app)
 
 ## What it does
 
@@ -34,10 +34,3 @@ npx tsc --noEmit  # type check
 
 This project is not affiliated with any political party, government body, or the data sources cited above.
 
-## Contributing
-
-Data corrections and additions are welcome. See `DATA_CONTRIBUTING.md` (coming soon) for the schema and PR guidelines. Every data PR must include a source URL.
-
-## Licence
-
-Code: MIT. Data files in `/public/data/`: see `DATA_LICENSE.md` (coming soon) — licences vary by source.
