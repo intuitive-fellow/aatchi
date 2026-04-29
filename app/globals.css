@@ -18,3 +18,19 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Kerala SVG map — mobile: width-constrained; desktop: fills panel height */
+.kerala-svg {
+  display: block;
+  width: 48vw;
+  height: auto;
+  max-height: 65vh;
+}
+
+@media (min-width: 768px) {
+  .kerala-svg {
+    width: auto;
+    height: calc(100vh - 240px);
+    max-height: 78vh;
+  }
+}

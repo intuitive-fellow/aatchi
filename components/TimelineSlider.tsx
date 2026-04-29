@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 const YEAR_MIN = 1957
 const YEAR_MAX = new Date().getFullYear()
@@ -11,7 +11,6 @@ const ELECTION_YEARS = [
 ]
 
 const DESKTOP_LABELED = [1957, 1967, 1980, 1991, 2001, 2011, 2021]
-const MOBILE_LABELED  = [1957, 1977, 1996, 2021]
 
 interface Segment {
   year: number
@@ -28,6 +27,7 @@ interface Props {
 export default function TimelineSlider({ year, onChange, allianceColour, trackSegments }: Props) {
   const trackRef = useRef<HTMLDivElement>(null)
   const dragging = useRef(false)
+  const [isAnimating, setIsAnimating] = useState(false)
 
   const pct = (year - YEAR_MIN) / (YEAR_MAX - YEAR_MIN)
 
@@ -58,21 +58,92 @@ export default function TimelineSlider({ year, onChange, allianceColour, trackSe
     }
   }, [yearFromX])
 
+  // Animation: advance one year every 220ms
+  useEffect(() => {
+    if (!isAnimating) return
+    if (year >= YEAR_MAX) {
+      setIsAnimating(false)
+      return
+    }
+    const timer = setTimeout(() => {
+      onChange(year + 1)
+    }, 220)
+    return () => clearTimeout(timer)
+  }, [isAnimating, year, onChange])
+
+  const toggleAnimation = () => {
+    if (isAnimating) {
+      setIsAnimating(false)
+    } else {
+      if (year >= YEAR_MAX) onChange(YEAR_MIN)
+      setIsAnimating(true)
+    }
+  }
+
   return (
     <div style={{ userSelect: 'none' }}>
-      {/* Year display */}
+      {/* Year display + animate button */}
       <div
         style={{
-          fontSize: 36,
-          fontWeight: 500,
-          color: '#111',
-          fontVariantNumeric: 'tabular-nums',
-          letterSpacing: '-1px',
-          marginBottom: 14,
-          fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          marginBottom: 16,
         }}
       >
-        {year}
+        <div
+          style={{
+            fontSize: 52,
+            fontWeight: 700,
+            color: '#111',
+            fontVariantNumeric: 'tabular-nums',
+            letterSpacing: '-2px',
+            lineHeight: 1,
+            fontFamily: 'system-ui, -apple-system, sans-serif',
+          }}
+        >
+          {year}
+        </div>
+
+        <button
+          onClick={toggleAnimation}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 6,
+            border: '0.5px solid #E0E0E0',
+            borderRadius: 8,
+            padding: '6px 12px',
+            background: isAnimating ? '#F5F5F5' : '#fff',
+            color: '#555',
+            fontSize: 12,
+            fontWeight: 500,
+            cursor: 'pointer',
+            fontFamily: 'inherit',
+            marginBottom: 4,
+            transition: 'background 150ms ease',
+          }}
+          onMouseEnter={e => {
+            if (!isAnimating) (e.currentTarget as HTMLButtonElement).style.background = '#F5F5F5'
+          }}
+          onMouseLeave={e => {
+            if (!isAnimating) (e.currentTarget as HTMLButtonElement).style.background = '#fff'
+          }}
+        >
+          {isAnimating ? (
+            /* Pause icon */
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true">
+              <rect x={0} y={0} width={3.5} height={12} rx={1} />
+              <rect x={6.5} y={0} width={3.5} height={12} rx={1} />
+            </svg>
+          ) : (
+            /* Play icon */
+            <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true">
+              <path d="M0 0l10 6-10 6V0z" />
+            </svg>
+          )}
+          {isAnimating ? 'Pause' : 'Animate timeline'}
+        </button>
       </div>
 
       {/* Track */}
@@ -84,13 +155,13 @@ export default function TimelineSlider({ year, onChange, allianceColour, trackSe
           width: '100%',
           height: 6,
           borderRadius: 3,
-          background: '#E0E0E0',
+          background: '#E8E8E8',
           position: 'relative',
           cursor: 'pointer',
           marginBottom: 10,
         }}
       >
-        {/* Coloured segments to the left of thumb */}
+        {/* Coloured history segments */}
         <div
           style={{
             position: 'absolute', left: 0, top: 0, bottom: 0,
@@ -101,10 +172,7 @@ export default function TimelineSlider({ year, onChange, allianceColour, trackSe
           }}
         >
           {trackSegments.map((s, i) => (
-            <div
-              key={i}
-              style={{ flex: '1 1 0', background: s.colour }}
-            />
+            <div key={i} style={{ flex: '1 1 0', background: s.colour }} />
           ))}
         </div>
 
@@ -123,6 +191,7 @@ export default function TimelineSlider({ year, onChange, allianceColour, trackSe
             transition: 'border-color 200ms ease',
             cursor: 'grab',
             boxSizing: 'border-box',
+            boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
           }}
         />
       </div>
@@ -159,7 +228,7 @@ export default function TimelineSlider({ year, onChange, allianceColour, trackSe
                   style={{
                     fontSize: 10,
                     color: isActive ? allianceColour : '#AAA',
-                    fontWeight: isActive ? 600 : 400,
+                    fontWeight: isActive ? 700 : 400,
                     fontVariantNumeric: 'tabular-nums',
                     transition: 'color 200ms ease',
                   }}

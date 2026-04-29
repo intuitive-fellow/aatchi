@@ -1,88 +1,60 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata = {
   title: 'About — Aatchi',
-  description: "About Aatchi — India's open-source civic governance timeline. Data sources and attribution.",
+  description: "About Aatchi — India's open-source civic governance timeline.",
 }
 
 export default function AboutPage() {
   return (
-    <main style={{ maxWidth: 680, margin: '0 auto', padding: '48px 24px 80px' }}>
-      {/* Hero — full logo PNG with tagline */}
-      <div style={{ marginBottom: 56 }}>
-        <Image
-          src="/logo-full.png"
-          alt="Aatchi — Rule. History. People."
-          width={340}
-          height={170}
-          priority
-          style={{ display: 'block', marginBottom: 24 }}
-        />
+    <main style={{ maxWidth: 640, margin: '0 auto', padding: '48px 24px 80px' }}>
+      <div style={{ marginBottom: 48 }}>
+        <h1
+          style={{
+            fontFamily: "Georgia, Cambria, 'Times New Roman', Times, serif",
+            fontSize: 32,
+            fontWeight: 400,
+            color: '#1D2B4A',
+            letterSpacing: '-0.3px',
+            marginBottom: 12,
+          }}
+        >
+          aatchi
+        </h1>
         <p style={{ fontSize: 15, color: '#555', lineHeight: 1.7, margin: 0 }}>
-          Aatchi (ஆட்சி) is an open-source civic data platform that visualises
-          state-wise political governance in India from 1957 to the present.
-          Kerala is the pilot state. All 28 states are the goal.
+          Aatchi (ஆட்சி — "rule" in Tamil/Malayalam) is an open-source civic data
+          platform that visualises India's state-wise political governance from 1957
+          to the present. Kerala is live. All 28 states are the goal.
         </p>
       </div>
 
       <Divider />
 
-      {/* What it is */}
-      <Section title="What this is">
+      <Section title="What it does">
         <p>
-          Users slide through years on a timeline, see the Kerala map coloured by the
-          ruling alliance, and click through to see cabinet details for any government.
+          Slide through years on a timeline, see each state map coloured by the ruling
+          alliance, and tap through to see who governed, when, and for how long.
         </p>
         <ul style={{ paddingLeft: 20, marginTop: 12, lineHeight: 1.9 }}>
-          <li>Not a commercial product — no revenue, no ads, no monetisation ever.</li>
-          <li>Not opinionated — factual historical data only. No political commentary.</li>
-          <li>A public data resource for students, researchers, and journalists.</li>
-          <li>Pan-India in vision — Kerala is the pilot, all 28 states are the goal.</li>
+          <li>No ads, no revenue, no monetisation — ever.</li>
+          <li>Factual data only. No commentary, no opinion.</li>
+          <li>Built for students, journalists, and anyone curious.</li>
         </ul>
       </Section>
 
       <Divider />
 
-      {/* Data sources */}
-      <div id="data">
-        <Section title="Data sources">
-          <DataSource
-            name="TCPD Chief Ministers of India Dataset (TCPD-CMID)"
-            org="Trivedi Centre for Political Data, Ashoka University"
-            licence="Free for non-commercial use"
-            note="Aatchi is not affiliated with, endorsed by, or sponsored by TCPD. The TCPD name and trademarks are not used in any way that implies endorsement."
-          />
-          <DataSource
-            name="Election Commission of India — Statistical Reports"
-            org="Election Commission of India"
-            licence="Government open data, free to use"
-            note="Historical election result data for Kerala Legislative Assembly elections."
-          />
-          <DataSource
-            name="Kerala Districts GeoJSON"
-            org="Datameet community"
-            licence="Open Database Licence (ODbL)"
-            note="Boundary data © Datameet community (ODbL). Derivatives must remain open under the same licence."
-          />
-        </Section>
-      </div>
-
-      <Divider />
-
-      {/* Colour coding */}
       <Section title="How the map is coloured">
         <p style={{ marginBottom: 16 }}>
-          The map is coloured by <strong>ruling alliance</strong>, not by the individual
-          party of the Chief Minister. Four colours are used — one for each alliance.
-          No colour means anything else.
+          Each state is coloured by its <strong>ruling alliance</strong>, not the
+          Chief Minister's individual party.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {[
-            { colour: '#C62828', label: 'LDF', desc: 'Left Democratic Front — dominant since 1980' },
-            { colour: '#1565C0', label: 'UDF', desc: 'United Democratic Front — alternates with LDF' },
-            { colour: '#757575', label: "President's Rule", desc: 'Article 356 — central government administration' },
-            { colour: '#B0BEC5', label: 'Pre-alliance era', desc: 'Governments formed before the LDF/UDF system (pre-1980)' },
+            { colour: '#C62828', label: 'LDF', desc: 'Left Democratic Front' },
+            { colour: '#1565C0', label: 'UDF', desc: 'United Democratic Front' },
+            { colour: '#757575', label: "President's Rule", desc: 'Central government administration (Article 356)' },
+            { colour: '#B0BEC5', label: 'Other / Pre-alliance', desc: 'Before the LDF/UDF system or other arrangements' },
           ].map(({ colour, label, desc }) => (
             <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
               <span style={{ width: 14, height: 14, borderRadius: 3, background: colour, flexShrink: 0, marginTop: 3 }} />
@@ -97,42 +69,149 @@ export default function AboutPage() {
 
       <Divider />
 
-      {/* Contribute */}
-      <Section title="Contribute">
-        <p>
-          Aatchi is open source. If you find a data error or want to add missing cabinet
-          details, open a pull request on GitHub. Every data PR requires a source URL
-          in the description.
+      <Section title="Data sources">
+        <p style={{ marginBottom: 12 }}>
+          All data comes from publicly available, verifiable sources.
         </p>
-        <a
-          href="https://github.com/intuitive-fellow/aatchi"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16,
-            border: '0.5px solid #E0E0E0', borderRadius: 6, padding: '8px 14px',
-            fontSize: 13, color: '#555', background: '#fff', textDecoration: 'none',
-          }}
-        >
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-          </svg>
-          View on GitHub
-        </a>
+        {[
+          {
+            name: 'TCPD Chief Ministers Dataset',
+            org: 'Trivedi Centre for Political Data, Ashoka University',
+          },
+          {
+            name: 'Election Commission of India',
+            org: 'Statistical reports on assembly elections',
+          },
+          {
+            name: 'Kerala Districts GeoJSON',
+            org: 'Datameet community (ODbL)',
+          },
+        ].map(({ name, org }) => (
+          <div
+            key={name}
+            style={{
+              padding: '10px 14px',
+              border: '0.5px solid #E0E0E0',
+              borderRadius: 8,
+              marginBottom: 8,
+            }}
+          >
+            <div style={{ fontSize: 13, fontWeight: 500, color: '#111' }}>{name}</div>
+            <div style={{ fontSize: 12, color: '#777' }}>{org}</div>
+          </div>
+        ))}
       </Section>
 
       <Divider />
 
-      {/* Footer disclaimer */}
+      {/* Built by — Dark Civic Seal */}
+      <div
+        style={{
+          position: 'relative',
+          overflow: 'hidden',
+          borderRadius: 14,
+          padding: '28px 28px 24px',
+          marginBottom: 20,
+          background: [
+            'radial-gradient(ellipse 55% 140% at 18% 50%, rgba(198,40,40,0.32) 0%, transparent 100%)',
+            'radial-gradient(ellipse 40% 160% at 88% 50%, rgba(255,255,255,0.03) 0%, transparent 100%)',
+            '#1D2B4A',
+          ].join(', '),
+        }}
+      >
+        {/* SVG layer: dot grid + concentric rings */}
+        <svg
+          style={{
+            position: 'absolute', inset: 0,
+            width: '100%', height: '100%',
+            pointerEvents: 'none', zIndex: 0,
+          }}
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern id="by-dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="11" cy="11" r="1" fill="white" fillOpacity="0.055" />
+            </pattern>
+          </defs>
+
+          {/* Dot grid */}
+          <rect width="100%" height="100%" fill="url(#by-dots)" />
+
+          {/* Concentric rings anchored to the right side */}
+          <circle cx="88%" cy="50%" r="55"  fill="none" stroke="white" strokeWidth="0.6" strokeOpacity="0.08" />
+          <circle cx="88%" cy="50%" r="90"  fill="none" stroke="white" strokeWidth="0.5" strokeOpacity="0.06" />
+          <circle cx="88%" cy="50%" r="130" fill="none" stroke="white" strokeWidth="0.4" strokeOpacity="0.045" />
+          <circle cx="88%" cy="50%" r="175" fill="none" stroke="white" strokeWidth="0.3" strokeOpacity="0.03" />
+
+          {/* Faint cross-hair at glow origin */}
+          <line x1="18%" y1="0" x2="18%" y2="100%" stroke="#C62828" strokeWidth="0.5" strokeOpacity="0.18" />
+          <line x1="0"   y1="50%" x2="40%" y2="50%" stroke="#C62828" strokeWidth="0.5" strokeOpacity="0.12" />
+        </svg>
+
+        {/* Content */}
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <div
+            style={{
+              fontSize: 9, fontWeight: 700, letterSpacing: '0.15em',
+              color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase',
+              marginBottom: 10,
+            }}
+          >
+            Built by
+          </div>
+
+          <a
+            href="https://instagram.com/intuitive.fellow"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'block',
+              fontSize: 22, fontWeight: 700, color: '#C62828',
+              textDecoration: 'none', letterSpacing: '-0.4px', lineHeight: 1.2,
+              marginBottom: 8,
+            }}
+          >
+            Fadil Ameen V.M
+          </a>
+
+          <div style={{ display: 'flex', gap: 16, marginTop: 18 }}>
+            <a
+              href="https://instagram.com/intuitive.fellow"
+              target="_blank" rel="noopener noreferrer"
+              style={{
+                fontSize: 11, fontWeight: 500,
+                color: 'rgba(255,255,255,0.45)',
+                textDecoration: 'none',
+                letterSpacing: '0.02em',
+              }}
+            >
+              ↗ Instagram
+            </a>
+            <a
+              href="https://github.com/intuitive-fellow/aatchi"
+              target="_blank" rel="noopener noreferrer"
+              style={{
+                fontSize: 11, fontWeight: 500,
+                color: 'rgba(255,255,255,0.45)',
+                textDecoration: 'none',
+                letterSpacing: '0.02em',
+              }}
+            >
+              ↗ GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
       <p
         style={{
-          fontSize: 12, color: '#999', lineHeight: 1.7,
-          padding: '16px 0', borderTop: '0.5px solid #E0E0E0',
+          fontSize: 12, color: '#AAA', lineHeight: 1.8, margin: 0,
+          padding: '4px 0',
         }}
       >
         Aatchi is an independent civic project. Not affiliated with any political party,
-        government body, or the data sources cited above. Data presented for informational
-        purposes only.
+        government body, or the data sources cited above. Data is presented for
+        informational purposes only.
       </p>
     </main>
   )
@@ -158,32 +237,5 @@ function Section({ title, children }: { title: string; children: React.ReactNode
         {children}
       </div>
     </section>
-  )
-}
-
-function DataSource({ name, org, licence, note }: {
-  name: string; org: string; licence: string; note: string
-}) {
-  return (
-    <div
-      style={{
-        padding: '14px 16px',
-        border: '0.5px solid #E0E0E0',
-        borderRadius: 8,
-        marginBottom: 12,
-      }}
-    >
-      <div style={{ fontSize: 13, fontWeight: 500, color: '#111', marginBottom: 4 }}>{name}</div>
-      <div style={{ fontSize: 12, color: '#555', marginBottom: 4 }}>{org}</div>
-      <div
-        style={{
-          fontSize: 11, color: '#fff', background: '#555',
-          display: 'inline-block', padding: '2px 7px', borderRadius: 3, marginBottom: 8,
-        }}
-      >
-        {licence}
-      </div>
-      <div style={{ fontSize: 12, color: '#999', lineHeight: 1.6 }}>{note}</div>
-    </div>
   )
 }

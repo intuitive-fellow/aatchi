@@ -14,6 +14,7 @@ import {
   getAllParties,
   getColourForYear,
 } from '@/lib/data'
+import MapBackground from '@/components/MapBackground'
 
 const KeralaMap = dynamic(() => import('@/components/KeralaMap'), {
   ssr: false,
@@ -63,21 +64,30 @@ export default function Home() {
       {/* Desktop two-column layout */}
       <main
         className="hidden md:grid"
-        style={{ gridTemplateColumns: '1fr 1fr', height: 'calc(100vh - 82px)' }}
+        style={{
+          gridTemplateColumns: '1fr 1fr',
+          height: 'calc(100vh - 96px)',
+          maxWidth: 1440,
+          width: '100%',
+          margin: '0 auto',
+          borderLeft: '0.5px solid #E0E0E0',
+          borderRight: '0.5px solid #E0E0E0',
+        }}
       >
         {/* Left — map */}
         <div
           style={{
-            background: '#fff',
+            background: '#FAFAFA',
             borderRight: '0.5px solid #E0E0E0',
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             padding: 24,
-            overflow: 'hidden',
+            overflow: 'visible',
           }}
         >
+          <MapBackground />
           <KeralaMap
             year={year}
             government={government}
@@ -92,49 +102,53 @@ export default function Home() {
             display: 'flex',
             flexDirection: 'column',
             padding: 24,
-            overflowY: 'auto',
+            overflow: 'hidden',
             background: '#fff',
           }}
         >
-          <TimelineSlider
-            year={year}
-            onChange={setYear}
-            allianceColour={allianceColour}
-            trackSegments={trackSegments}
-          />
-          <PartyLegend />
-          <div
-            style={{
-              height: '0.5px',
-              background: '#F0F0F0',
-              margin: '24px -24px',
-              width: 'calc(100% + 48px)',
-            }}
-          />
-          {government && (
-            <GovernmentCard
-              government={government}
+          {/* Fixed top section — never scrolls away */}
+          <div style={{ flexShrink: 0 }}>
+            <TimelineSlider
+              year={year}
+              onChange={setYear}
               allianceColour={allianceColour}
-              allianceName={allianceName}
-              parties={parties}
-              onOpenCabinet={() => setCabinetOpen(true)}
+              trackSegments={trackSegments}
             />
+            <PartyLegend />
+            <div style={{ marginBottom: 20 }} />
+          </div>
+
+          {/* Card fills remaining height; button is always visible at its bottom */}
+          {government && (
+            <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
+              <GovernmentCard
+                government={government}
+                allianceColour={allianceColour}
+                allianceName={allianceName}
+                parties={parties}
+                hasCabinet={cabinet !== null}
+                onOpenCabinet={() => setCabinetOpen(true)}
+              />
+            </div>
           )}
         </div>
       </main>
 
       {/* Mobile stacked layout */}
-      <main className="md:hidden">
+      <main className="md:hidden" style={{ maxWidth: 1440, width: '100%', margin: '0 auto' }}>
         <div
           style={{
-            background: '#fff',
+            background: '#FAFAFA',
             borderBottom: '0.5px solid #E0E0E0',
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            minHeight: 340,
+            padding: '48px 16px 60px',
           }}
         >
+          <MapBackground />
           <div
             style={{
               position: 'absolute', top: 12, left: 14,
@@ -152,7 +166,7 @@ export default function Home() {
               letterSpacing: '0.05em', textTransform: 'uppercase',
             }}
           >
-            Kerala
+            
           </div>
           <KeralaMap
             year={year}
@@ -179,6 +193,7 @@ export default function Home() {
               allianceColour={allianceColour}
               allianceName={allianceName}
               parties={parties}
+              hasCabinet={cabinet !== null}
               onOpenCabinet={() => setCabinetOpen(true)}
             />
           )}
