@@ -167,6 +167,22 @@ export default function GovernmentCard({
 }: Props) {
   const isPR = government.type === 'presidents_rule'
 
+  // Hooks must run unconditionally on every render. Compute them before the
+  // PR early return so React's hook order stays stable when the slider crosses
+  // a PR↔elected boundary.
+  const totalSeats = government.total_seats ?? 140
+  const seatsWon   = government.seats_won   ?? 0
+
+  const seatBlocks = useMemo(() =>
+    Array.from({ length: totalSeats }, (_, i) => i < seatsWon),
+    [totalSeats, seatsWon],
+  )
+
+  const active = useMemo(
+    () => getActiveCmForYear(government, year),
+    [government, year],
+  )
+
   // ── President's Rule ──────────────────────────────────────────────────────
   if (isPR) {
     return (
@@ -202,23 +218,10 @@ export default function GovernmentCard({
 
   // ── Elected government ────────────────────────────────────────────────────
 
-  const totalSeats = government.total_seats ?? 140
-  const seatsWon   = government.seats_won   ?? 0
-
-  const seatBlocks = useMemo(() =>
-    Array.from({ length: totalSeats }, (_, i) => i < seatsWon),
-    [totalSeats, seatsWon],
-  )
-
   const coalitionParties = government.coalition_partners.map(id => {
     const p = parties.find(p => p.id === id)
     return { id, shortName: p?.short_name ?? id, fullName: p?.name ?? id, color: p?.color ?? '#999' }
   })
-
-  const active = useMemo(
-    () => getActiveCmForYear(government, year),
-    [government, year],
-  )
 
   const hasMidTermChange = (government.cm_changes?.length ?? 0) > 1
 
@@ -321,35 +324,55 @@ export default function GovernmentCard({
           </div>
         </div>
 
-        {/* Mid-term CM changes */}
-        {hasMidTermChange && (
+        {/* Mid-term CM changes — neutral palette, active row highlighted */}
+        {hasMidTermChange && active && (
           <div
             style={{
-              background: '#F0F7FF', border: '0.5px solid #BFDBFE', borderRadius: 8,
-              padding: '10px 12px', marginBottom: 16, fontSize: 12, color: '#1E40AF',
+              background: '#FAFAFA', border: '0.5px solid #EEE', borderRadius: 8,
+              padding: '10px 12px', marginBottom: 16, fontSize: 12, color: '#444',
             }}
           >
-            <div style={{ fontWeight: 600, marginBottom: 8 }}>
-              This term had {government.cm_changes?.length ?? 0} Chief Ministers
+            <div style={{ fontWeight: 600, marginBottom: 8, color: '#333' }}>
+              Chief Ministers in this term
             </div>
-            {(government.cm_changes ?? []).map((c, i) => (
-              <div
-                key={i}
-                style={{
-                  display: 'flex', gap: 8, alignItems: 'flex-start', padding: '6px 0',
-                  borderTop: i === 0 ? 'none' : '0.5px solid #DBEAFE',
-                }}
-              >
-                <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#1E40AF', opacity: 1 - i * 0.35, flexShrink: 0, marginTop: 5 }} />
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: '#1E3A8A' }}>{c.cm_name}</div>
-                  <div style={{ fontSize: 11, color: '#3B6FB6', fontVariantNumeric: 'tabular-nums' }}>
-                    {formatDate(c.start_date)} – {formatDate(c.end_date)}
+            {(government.cm_changes ?? []).map((c, i) => {
+              const isActive =
+                c.cm_name === active.cm.name &&
+                c.start_date === active.cm.start_date
+              return (
+                <div
+                  key={i}
+                  style={{
+                    display: 'flex', gap: 8, alignItems: 'flex-start', padding: '6px 0',
+                    borderTop: i === 0 ? 'none' : '0.5px solid #EEE',
+                    opacity: isActive ? 1 : 0.55,
+                    transition: 'opacity 200ms ease',
+                  }}
+                >
+                  <span
+                    style={{
+                      width: 7, height: 7, borderRadius: '50%', flexShrink: 0, marginTop: 5,
+                      background: isActive ? allianceColour : 'transparent',
+                      border: isActive ? 'none' : '1px solid #BBB',
+                      transition: 'background 200ms ease, border-color 200ms ease',
+                    }}
+                  />
+                  <div>
+                    <div style={{ fontSize: 12, fontWeight: isActive ? 600 : 500, color: isActive ? '#111' : '#333' }}>
+                      {c.cm_name}
+                    </div>
+                    <div style={{ fontSize: 11, color: '#666', fontVariantNumeric: 'tabular-nums' }}>
+                      {formatDate(c.start_date)} – {formatDate(c.end_date)}
+                    </div>
+                    {c.reason && (
+                      <div style={{ fontSize: 11, color: '#777', fontStyle: 'italic', marginTop: 2 }}>
+                        {c.reason}
+                      </div>
+                    )}
                   </div>
-                  {c.reason && <div style={{ fontSize: 11, color: '#5A7AAB', fontStyle: 'italic', marginTop: 2 }}>{c.reason}</div>}
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         )}
 
