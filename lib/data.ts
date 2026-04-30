@@ -174,7 +174,11 @@ export function getActiveCmForYear(
     activeIdx = target < firstStart ? 0 : changes.length - 1
   }
 
-  const cm = fromCmChange(changes[activeIdx])
+  // For the first CM, `reason` from CmChange is that CM's *departure* note,
+  // not a succession note — null it out so callers can treat reason uniformly
+  // as "why this CM took over" (null when there's no predecessor).
+  const rawCm = fromCmChange(changes[activeIdx])
+  const cm = activeIdx === 0 ? { ...rawCm, reason: null } : rawCm
   const predecessor = activeIdx > 0 ? fromCmChange(changes[activeIdx - 1]) : null
   return { cm, predecessor, isFirst: activeIdx === 0 }
 }
