@@ -22,7 +22,7 @@ export default function AboutPage() {
           aatchi
         </h1>
         <p style={{ fontSize: 15, color: '#555', lineHeight: 1.7, margin: 0 }}>
-          Aatchi (ஆட்சி — "rule" in Tamil/Malayalam) is an open-source civic data
+          Aatchi (ஆட்சி — "rule" in Tamil) is an open-source civic data
           platform that visualises India's state-wise political governance from 1957
           to the present. Kerala is live. All 28 states are the goal.
         </p>

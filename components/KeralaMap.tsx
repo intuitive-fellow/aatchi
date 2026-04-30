@@ -85,10 +85,13 @@ export default function KeralaMap({ year, government, allianceColour, allianceNa
 
     const zoom = d3.zoom<SVGSVGElement, unknown>()
       .scaleExtent([MIN_ZOOM, MAX_ZOOM])
+      .filter(event => !event.type.startsWith('touch'))
       .on('zoom', event => { g.attr('transform', event.transform.toString()) })
 
     svg.call(zoom)
     svg.on('dblclick.zoom', null)
+    // Restore touch-action after D3 sets it to "none", so page scrolling works on mobile
+    svgRef.current.style.touchAction = 'auto'
     zoomRef.current = zoom
 
     return () => { svg.on('.zoom', null) }

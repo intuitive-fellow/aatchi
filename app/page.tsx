@@ -144,8 +144,8 @@ export default function Home() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            minHeight: 340,
-            padding: '48px 16px 60px',
+            minHeight: 300,
+            padding: '12px 16px 16px',
           }}
         >
           <MapBackground />

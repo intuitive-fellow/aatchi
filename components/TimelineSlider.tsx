@@ -146,6 +146,19 @@ export default function TimelineSlider({ year, onChange, allianceColour, trackSe
         </button>
       </div>
 
+      {/* First-visit hint */}
+      <p
+        style={{
+          fontSize: 11,
+          color: '#AAA',
+          margin: '0 0 14px',
+          letterSpacing: '0.01em',
+          lineHeight: 1,
+        }}
+      >
+        Drag to explore Kerala's political history from 1957
+      </p>
+
       {/* Track */}
       <div
         ref={trackRef}
