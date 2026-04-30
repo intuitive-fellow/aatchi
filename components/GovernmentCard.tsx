@@ -5,6 +5,7 @@ import { formatDate, formatDuration } from '@/lib/data'
 
 interface Props {
   government: Government
+  year: number
   allianceColour: string
   allianceName: string
   parties: Party[]
@@ -157,6 +158,7 @@ function CoalitionChip({ shortName, fullName, color }: {
 
 export default function GovernmentCard({
   government,
+  year,
   allianceColour,
   allianceName,
   parties,

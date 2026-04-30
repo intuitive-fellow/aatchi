@@ -123,6 +123,7 @@ export default function Home() {
             <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
               <GovernmentCard
                 government={government}
+                year={year}
                 allianceColour={allianceColour}
                 allianceName={allianceName}
                 parties={parties}
@@ -190,6 +191,7 @@ export default function Home() {
           {government && (
             <GovernmentCard
               government={government}
+              year={year}
               allianceColour={allianceColour}
               allianceName={allianceName}
               parties={parties}
