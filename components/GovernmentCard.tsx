@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import type { Government, Party } from '@/schemas'
-import { formatDate, formatDuration } from '@/lib/data'
+import { formatDate, formatDuration, getActiveCmForYear } from '@/lib/data'
 
 interface Props {
   government: Government
@@ -215,6 +215,11 @@ export default function GovernmentCard({
     return { id, shortName: p?.short_name ?? id, fullName: p?.name ?? id, color: p?.color ?? '#999' }
   })
 
+  const active = useMemo(
+    () => getActiveCmForYear(government, year),
+    [government, year],
+  )
+
   const hasMidTermChange = (government.cm_changes?.length ?? 0) > 1
 
   return (
@@ -257,13 +262,34 @@ export default function GovernmentCard({
               Chief Minister
             </div>
             <div
+              aria-label={
+                active && !active.isFirst && active.predecessor
+                  ? `Chief Minister ${active.cm.name}, took over from ${active.predecessor.name} on ${formatDate(active.cm.start_date)}`
+                  : `Chief Minister ${active?.cm.name ?? government.cm?.name ?? ''}`
+              }
               style={{
                 fontSize: 24, fontWeight: 700, color: '#111',
                 letterSpacing: '-0.5px', lineHeight: 1.15, marginBottom: 8,
               }}
             >
-              {government.cm?.name}
+              {active?.cm.name ?? government.cm?.name}
             </div>
+
+            {active && !active.isFirst && active.predecessor && (
+              <div
+                style={{
+                  display: 'flex', alignItems: 'baseline', gap: 6,
+                  margin: '-2px 0 10px 0',
+                  fontSize: 11, color: '#888', letterSpacing: '0.01em',
+                }}
+              >
+                <span style={{ color: '#BBB' }}>↳</span>
+                <span>
+                  Took over from {active.predecessor.name} · {formatDate(active.cm.start_date)}
+                </span>
+              </div>
+            )}
+
             <div
               style={{
                 fontSize: 11, fontWeight: 600, color: '#fff',
