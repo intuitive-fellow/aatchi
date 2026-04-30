@@ -1,4 +1,4 @@
-import type { Alliance, Cabinet, Government, Party, State } from '@/schemas'
+import type { Alliance, Cabinet, CmChange, CmObject, Government, Party, State } from '@/schemas'
 
 import rawAlliancesFile from '@/public/data/alliances.json'
 import rawCabinetsFile from '@/public/data/cabinets.json'
@@ -107,4 +107,74 @@ export function formatDuration(startStr: string, endStr: string | null): string 
   if (years === 0) return `${rem} month${rem !== 1 ? 's' : ''}`
   if (rem === 0) return `${years} year${years !== 1 ? 's' : ''}`
   return `${years} year${years !== 1 ? 's' : ''}, ${rem} month${rem !== 1 ? 's' : ''}`
+}
+
+// ── Active-CM resolution ─────────────────────────────────────────────────────
+//
+// Given a slider year, return whichever CM was actually in office that year.
+// Resolves to July 1 of the year (midpoint), so boundary years pick the CM
+// who held office for the larger share of the year.
+
+export type ActiveCm = {
+  name: string
+  party_id: string | null
+  start_date: string
+  end_date: string | null
+  reason: string | null
+}
+
+export type ActiveCmResult = {
+  cm: ActiveCm
+  predecessor: ActiveCm | null
+  isFirst: boolean
+}
+
+function fromCmChange(c: CmChange): ActiveCm {
+  return {
+    name: c.cm_name,
+    party_id: c.party_id,
+    start_date: c.start_date,
+    end_date: c.end_date,
+    reason: c.reason,
+  }
+}
+
+function fromCmObject(c: CmObject): ActiveCm {
+  return {
+    name: c.name,
+    party_id: c.party_id,
+    start_date: c.start_date,
+    end_date: c.end_date,
+    reason: null,
+  }
+}
+
+export function getActiveCmForYear(
+  government: Government,
+  year: number,
+): ActiveCmResult | null {
+  if (government.type === 'presidents_rule') return null
+
+  const changes = government.cm_changes
+  if (!changes || changes.length <= 1) {
+    if (!government.cm) return null
+    return { cm: fromCmObject(government.cm), predecessor: null, isFirst: true }
+  }
+
+  const target = new Date(`${year}-07-01`).getTime()
+
+  let activeIdx = changes.findIndex(c => {
+    const start = new Date(c.start_date).getTime()
+    const end = c.end_date ? new Date(c.end_date).getTime() : Infinity
+    return start <= target && target < end
+  })
+
+  if (activeIdx === -1) {
+    const firstStart = new Date(changes[0].start_date).getTime()
+    activeIdx = target < firstStart ? 0 : changes.length - 1
+  }
+
+  const cm = fromCmChange(changes[activeIdx])
+  const predecessor = activeIdx > 0 ? fromCmChange(changes[activeIdx - 1]) : null
+  return { cm, predecessor, isFirst: activeIdx === 0 }
 }
